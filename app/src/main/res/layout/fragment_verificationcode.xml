@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.wtz.customview"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.wtz.customview.fragment.FragmentVerticalOffsetLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击可以看效果"
+        android:textSize="21sp" />
+
+    <com.wtz.customview.view.VerificationCode
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        custom:verificationCodeText="3712"
+        custom:verificationCodeTextColor="#ff0000"
+        custom:verificationCodeTextSize="40sp" />
+</LinearLayout>

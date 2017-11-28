@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="verificationCodeText" format="string" />
+    <attr name="verificationCodeTextColor" format="color" />
+    <attr name="verificationCodeTextSize" format="dimension" />
+
+    <declare-styleable name="VerificationCodeView">
+        <attr name="verificationCodeText" />
+        <attr name="verificationCodeTextColor" />
+        <attr name="verificationCodeTextSize" />
+    </declare-styleable>
+
+</resources>

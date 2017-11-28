@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wtz.customview.fragment.FragmentVerticalOffsetLayout">
+
+    <com.wtz.customview.view.Bezier2Order
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#80ffff00" />
+
+    <RadioGroup
+        android:id="@+id/rg_ctrl_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/ctrl1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/ctrl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="控制点1" />
+
+        <RadioButton
+            android:id="@+id/ctrl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="控制点2" />
+    </RadioGroup>
+
+    <com.wtz.customview.view.Bezier3Order
+        android:id="@+id/bezier3"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="3dp"
+        android:background="#80ffff00" />
+
+</LinearLayout>
