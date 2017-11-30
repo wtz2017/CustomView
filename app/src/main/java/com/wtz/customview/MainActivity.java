@@ -15,6 +15,7 @@ import com.wtz.customview.fragment.FragmentAccumulateScale;
 import com.wtz.customview.fragment.FragmentBezier;
 import com.wtz.customview.fragment.FragmentLeafLoading;
 import com.wtz.customview.fragment.FragmentList;
+import com.wtz.customview.fragment.FragmentPathBooleanOp;
 import com.wtz.customview.fragment.FragmentPie;
 import com.wtz.customview.fragment.FragmentVerificationCode;
 import com.wtz.customview.fragment.FragmentVerticalOffsetLayout;
@@ -50,6 +51,7 @@ public class MainActivity extends FragmentActivity implements FragmentList.OnFra
         mList.add(new ListItem("canvas.drawBitmap指定区域绘制", FragmentAccumulateDrawbitmap.class.getName()));
         mList.add(new ListItem("饼图", FragmentPie.class.getName()));
         mList.add(new ListItem("贝赛尔曲线", FragmentBezier.class.getName()));
+        mList.add(new ListItem("PathBooleanOp(api>=19)", FragmentPathBooleanOp.class.getName()));
         mList.add(new ListItem("GALeafLoading", FragmentLeafLoading.class.getName()));
     }
 
