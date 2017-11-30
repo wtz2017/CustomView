@@ -5,10 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioGroup;
 
 import com.wtz.customview.R;
-import com.wtz.customview.view.Bezier3Order;
 
 public class FragmentAccumulateScale extends Fragment {
 

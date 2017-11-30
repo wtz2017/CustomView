@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
 import com.wtz.customview.R;
-import com.wtz.customview.view.Bezier3Order;
+import com.wtz.customview.view.bezier.Bezier3Order;
 
 public class FragmentBezier extends Fragment {
 

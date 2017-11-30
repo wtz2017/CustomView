@@ -1,4 +1,4 @@
-package com.wtz.customview.view;
+package com.wtz.customview.view.bezier;
 
 import android.content.Context;
 import android.graphics.Canvas;

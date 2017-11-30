@@ -5,9 +5,10 @@
     android:orientation="vertical"
     tools:context="com.wtz.customview.fragment.FragmentVerticalOffsetLayout">
 
-    <com.wtz.customview.view.Bezier2Order
+    <com.wtz.customview.view.bezier.Bezier2Order
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#80ffff00" />
 
     <RadioGroup
@@ -30,11 +31,19 @@
             android:text="控制点2" />
     </RadioGroup>
 
-    <com.wtz.customview.view.Bezier3Order
+    <com.wtz.customview.view.bezier.Bezier3Order
         android:id="@+id/bezier3"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="0dp"
         android:layout_marginTop="3dp"
+        android:layout_weight="1"
+        android:background="#80ffff00" />
+
+    <com.wtz.customview.view.bezier.CircleToHeart
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_weight="1"
         android:background="#80ffff00" />
 
 </LinearLayout>
