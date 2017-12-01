@@ -14,6 +14,9 @@ import com.wtz.customview.data.PieData;
 
 import java.util.ArrayList;
 
+/**
+ * 参考：https://github.com/GcsSloop
+ */
 public class PieGraph extends View {
     private static final String TAG = PieGraph.class.getSimpleName();
 

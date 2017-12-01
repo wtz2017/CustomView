@@ -15,6 +15,9 @@ import android.view.View;
 
 import com.wtz.customview.R;
 
+/**
+ * 参考：https://github.com/GcsSloop
+ */
 public class CheckView extends View {
 
     private static final String TAG = CheckView.class.getSimpleName();

@@ -16,9 +16,8 @@ import com.wtz.customview.R;
 import java.util.Random;
 
 /**
- * Created by WTZ on 2017/11/27.
+ * 参考：http://blog.csdn.net/lmj623565791/article/details/24252901
  */
-
 public class VerificationCode extends View {
 
     /**

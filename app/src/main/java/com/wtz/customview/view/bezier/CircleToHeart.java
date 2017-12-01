@@ -10,9 +10,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by WTZ on 2017/11/30.
+ * 参考：https://github.com/GcsSloop
  */
-
 public class CircleToHeart extends View {
     /**
      * 一个常量，用来计算绘制圆形贝塞尔曲线控制点的位置

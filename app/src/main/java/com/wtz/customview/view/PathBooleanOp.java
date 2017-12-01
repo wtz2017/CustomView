@@ -11,6 +11,9 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * https://github.com/GcsSloop
+ */
 public class PathBooleanOp extends View {
 
     // 画笔

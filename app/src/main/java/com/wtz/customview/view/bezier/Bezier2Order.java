@@ -10,6 +10,9 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+/**
+ * 参考：https://github.com/GcsSloop
+ */
 public class Bezier2Order extends View {
 
     private Paint mPaint;
