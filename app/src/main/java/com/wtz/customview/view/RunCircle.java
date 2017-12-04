@@ -15,6 +15,9 @@ import android.view.View;
 
 import com.wtz.customview.R;
 
+/**
+ * https://github.com/GcsSloop
+ */
 public class RunCircle extends View {
 
     // 画笔
