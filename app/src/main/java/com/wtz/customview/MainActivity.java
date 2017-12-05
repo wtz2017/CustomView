@@ -13,6 +13,7 @@ import com.wtz.customview.fragment.FragmentAccumulateDrawbitmap;
 import com.wtz.customview.fragment.FragmentAccumulateRotate;
 import com.wtz.customview.fragment.FragmentAccumulateScale;
 import com.wtz.customview.fragment.FragmentBezier;
+import com.wtz.customview.fragment.FragmentCameraRotate;
 import com.wtz.customview.fragment.FragmentLeafLoading;
 import com.wtz.customview.fragment.FragmentList;
 import com.wtz.customview.fragment.FragmentMatrixBasicUse;
@@ -59,6 +60,7 @@ public class MainActivity extends FragmentActivity implements FragmentList.OnFra
         mList.add(new ListItem("canvas.drawPath-PathMeasure", FragmentPathMeasure.class.getName()));
         mList.add(new ListItem("Matrix基本用法", FragmentMatrixBasicUse.class.getName()));
         mList.add(new ListItem("Matrix.setPolyToPoly(多边形)", FragmentPoly.class.getName()));
+        mList.add(new ListItem("camera.rotate(3D效果)", FragmentCameraRotate.class.getName()));
     }
 
     @Override

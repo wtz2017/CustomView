@@ -22,7 +22,7 @@ public class FragmentMatrixBasicUse extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_matrix_basic_use, container, false);
-        final MatrixBasicUse poly = (MatrixBasicUse) root.findViewById(R.id.matrix_basic_use);
+        final MatrixBasicUse matrixBasicUse = (MatrixBasicUse) root.findViewById(R.id.matrix_basic_use);
 
         RadioGroup group = (RadioGroup) root.findViewById(R.id.group);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -30,19 +30,19 @@ public class FragmentMatrixBasicUse extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (group.getCheckedRadioButtonId()) {
                     case R.id.point0:
-                        poly.setTestMode(0);
+                        matrixBasicUse.setTestMode(0);
                         break;
                     case R.id.point1:
-                        poly.setTestMode(1);
+                        matrixBasicUse.setTestMode(1);
                         break;
                     case R.id.point2:
-                        poly.setTestMode(2);
+                        matrixBasicUse.setTestMode(2);
                         break;
                     case R.id.point3:
-                        poly.setTestMode(3);
+                        matrixBasicUse.setTestMode(3);
                         break;
                     case R.id.point4:
-                        poly.setTestMode(4);
+                        matrixBasicUse.setTestMode(4);
                         break;
                 }
             }
