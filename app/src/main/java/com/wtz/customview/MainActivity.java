@@ -14,13 +14,16 @@ import com.wtz.customview.fragment.FragmentAccumulateRotate;
 import com.wtz.customview.fragment.FragmentAccumulateScale;
 import com.wtz.customview.fragment.FragmentBezier;
 import com.wtz.customview.fragment.FragmentCameraRotate;
+import com.wtz.customview.fragment.FragmentDashboard;
 import com.wtz.customview.fragment.FragmentLeafLoading;
 import com.wtz.customview.fragment.FragmentList;
 import com.wtz.customview.fragment.FragmentMatrixBasicUse;
+import com.wtz.customview.fragment.FragmentMultitouch;
 import com.wtz.customview.fragment.FragmentPathBooleanOp;
 import com.wtz.customview.fragment.FragmentPathMeasure;
 import com.wtz.customview.fragment.FragmentPie;
 import com.wtz.customview.fragment.FragmentPoly;
+import com.wtz.customview.fragment.FragmentTouchRegion;
 import com.wtz.customview.fragment.FragmentVerificationCode;
 import com.wtz.customview.fragment.FragmentVerticalOffsetLayout;
 
@@ -61,6 +64,9 @@ public class MainActivity extends FragmentActivity implements FragmentList.OnFra
         mList.add(new ListItem("Matrix基本用法", FragmentMatrixBasicUse.class.getName()));
         mList.add(new ListItem("Matrix.setPolyToPoly(多边形)", FragmentPoly.class.getName()));
         mList.add(new ListItem("camera.rotate(3D效果)", FragmentCameraRotate.class.getName()));
+        mList.add(new ListItem("TouchEvent、Region及Canvas坐标系", FragmentTouchRegion.class.getName()));
+        mList.add(new ListItem("Multitouch多点触控应用", FragmentMultitouch.class.getName()));
+        mList.add(new ListItem("Dashboard仪表盘", FragmentDashboard.class.getName()));
     }
 
     @Override
