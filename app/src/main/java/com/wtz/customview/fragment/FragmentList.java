@@ -3,12 +3,14 @@ package com.wtz.customview.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.wtz.customview.MainActivity;
 import com.wtz.customview.R;
 import com.wtz.customview.adapter.ListAdapter;
 import com.wtz.customview.data.ListItem;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class FragmentList extends Fragment {
+    private static final String TAG = FragmentList.class.getSimpleName();
 
     private static final String ARG_PARAM1 = "param_list";
     private ArrayList<ListItem> mList;
@@ -54,6 +57,7 @@ public class FragmentList extends Fragment {
 
     @Override
     public void onAttach(Context context) {
+        Log.d(TAG, "onAttach");
         super.onAttach(context);
         if (context instanceof OnFragmentListClickListener) {
             mListener = (OnFragmentListClickListener) context;
@@ -65,6 +69,7 @@ public class FragmentList extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mList = getArguments().getParcelableArrayList(ARG_PARAM1);
@@ -74,6 +79,7 @@ public class FragmentList extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView");
         View root = inflater.inflate(R.layout.fragment_list, container, false);
         mListView = (ListView) root.findViewById(R.id.lv_list);
         mListView.setAdapter(new ListAdapter(getActivity(), mList));
@@ -91,7 +97,20 @@ public class FragmentList extends Fragment {
     };
 
     @Override
+    public void onDestroyView() {
+        Log.d(TAG, "onDestroyView");
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d(TAG, "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
     public void onDetach() {
+        Log.d(TAG, "onDetach");
         super.onDetach();
         mListener = null;
         mList = null;

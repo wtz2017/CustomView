@@ -3,6 +3,7 @@ package com.wtz.customview;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Gravity;
@@ -15,6 +16,7 @@ import com.wtz.customview.fragment.FragmentAccumulateScale;
 import com.wtz.customview.fragment.FragmentBezier;
 import com.wtz.customview.fragment.FragmentCameraRotate;
 import com.wtz.customview.fragment.FragmentDashboard;
+import com.wtz.customview.fragment.FragmentGesture;
 import com.wtz.customview.fragment.FragmentLeafLoading;
 import com.wtz.customview.fragment.FragmentList;
 import com.wtz.customview.fragment.FragmentMatrixBasicUse;
@@ -38,22 +40,29 @@ public class MainActivity extends FragmentActivity implements FragmentList.OnFra
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initList();
 
-        FragmentList frag = FragmentList.newInstance(mList);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.fl_container, frag);
-        transaction.commit();
+        FragmentManager fm = getSupportFragmentManager();
+
+        if (fm.findFragmentByTag(FragmentList.class.getSimpleName()) == null) {
+            Log.d(TAG, "findFragmentByTag == null, to add " + FragmentList.class.getSimpleName());
+            // 防止屏幕旋转时重复加载fragment
+            FragmentList frag = FragmentList.newInstance(mList);
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.add(R.id.fl_container, frag, FragmentList.class.getSimpleName());
+            transaction.commit();
+        }
     }
 
     private void initList() {
         mList = new ArrayList<ListItem>();
-        mList.add(new ListItem("VerticalOffsetLayout", FragmentVerticalOffsetLayout.class.getName()));
+        mList.add(new ListItem("测量、布局、绘制 Demo", FragmentVerticalOffsetLayout.class.getName()));
         mList.add(new ListItem("验证码", FragmentVerificationCode.class.getName()));
-        mList.add(new ListItem("GALeafLoading", FragmentLeafLoading.class.getName()));
+        mList.add(new ListItem("GALeafLoading进度条", FragmentLeafLoading.class.getName()));
         mList.add(new ListItem("canvas.scale累积效果", FragmentAccumulateScale.class.getName()));
         mList.add(new ListItem("canvas.rotate累积效果", FragmentAccumulateRotate.class.getName()));
         mList.add(new ListItem("canvas.drawBitmap指定区域绘制", FragmentAccumulateDrawbitmap.class.getName()));
@@ -66,6 +75,7 @@ public class MainActivity extends FragmentActivity implements FragmentList.OnFra
         mList.add(new ListItem("camera.rotate(3D效果)", FragmentCameraRotate.class.getName()));
         mList.add(new ListItem("TouchEvent、Region及Canvas坐标系", FragmentTouchRegion.class.getName()));
         mList.add(new ListItem("Multitouch多点触控应用", FragmentMultitouch.class.getName()));
+        mList.add(new ListItem("Gesture触摸手势检测", FragmentGesture.class.getName()));
         mList.add(new ListItem("Dashboard仪表盘", FragmentDashboard.class.getName()));
     }
 
@@ -118,5 +128,11 @@ public class MainActivity extends FragmentActivity implements FragmentList.OnFra
         Toast toast = Toast.makeText(MainActivity.this, "" + msg, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 200);
         toast.show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG, "onDestroy");
+        super.onDestroy();
     }
 }
